@@ -6,6 +6,6 @@ module.exports = {
     entry: './src/js/App.js',
     output: {
         filename: 'final.js',
-        path: path.resolve(__dirname, 'public/js')
+        path: path.resolve(__dirname, './public/js')
     }
 }
