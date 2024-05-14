@@ -1,6 +1,5 @@
 import axios from "axios";
 
-
 export class Movies {
     constructor() {
         this.imgCoverElm = document.querySelectorAll('#img-cover');

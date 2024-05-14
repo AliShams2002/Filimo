@@ -1,7 +1,6 @@
 import { App } from '../App.js'
 import axios from "axios";
 
-
 export class Search {
     constructor() {
         this._formElm = document.getElementById('from-fillter');

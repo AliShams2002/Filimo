@@ -1,6 +1,6 @@
 import { Render } from './Render.js';
-import { movieSplide } from "../../Mudal/sliders.js";
-import { Menu } from "../../Mudal/menu.js";
+import { movieSplide } from "../Mudal/sliders.js";
+import { Menu } from "../Mudal/menu.js";
 
 export class MoviePage {
     constructor() {
