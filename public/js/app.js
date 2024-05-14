@@ -1,5 +1,4 @@
-import { MoviePage } from "../../src/js/MoviePage/MoviePage";
-// import axios from "axios";
+import { MoviePage } from "../../src/js/MoviePage/MoviePage.js";
 
 export class App {
     static init() {
