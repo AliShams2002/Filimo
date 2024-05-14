@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"rel="stylesheet"/>
+    <link rel="stylesheet" href="/src/css/lib/splide.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Movie</title>
+</head>
+<body class="relative bg-black flex items-center justify-center flex-col box-border">
+    
+    <header class="absolute top-0 w-full p-4 flex flex-row-reverse items-center justify-between gap-12 bg-gradient-to-b from-[#000] z-50">
+        <a href="./index.html" class="text-3xl text-pink font-bold">FILIMO</a>
+        <div>
+            <div>
+                <a href="#" id="menu-btn"><i class="ri-menu-line text-pink text-2xl md:hidden"></i></a>
+            </div>
+            <ul class="hidden md:flex items-center gap-12 text-aqua text-xl">
+                <li><a href="./index.html" class="hover:text-pink duration-100">Home</a></li>
+                <li><a href="#trailer-movie" class="hover:text-pink duration-100">Trailer</a></li>
+                <li><a href="#similar-movie" class="hover:text-pink duration-100">Similar Movie</a></li>
+            </ul>
+        </div>
+        
+    </header>
+
+    <div class="w-full h-screen absolute top-0 z-50 md:hidden -translate-x-full duration-500" id="menu">
+        <div class="fixed top-0 left-0 w-full h-full bg-[#00000054] z-50">
+            <ul class="w-1/2 h-screen flex flex-col items-start gap-2 py-5 pr-3 bg-black fixed top-0 left-0 z-50">
+                <a href="" id="close" class="text-aqua hover:text-pink ml-auto mb-5">X</a>
+                <li class="w-full text-aqua hover:bg-pink hover:text-aqua py-2 px-4 rounded-md"><a href="./index.html">Home</a></li>
+                <li class="w-full text-aqua hover:bg-pink hover:text-aqua py-2 px-4 rounded-md"><a href="#trailer-movie">Trailer</a></li>
+                <li class="w-full text-aqua hover:bg-pink hover:text-aqua py-2 px-4 rounded-md"><a href="#similar-movie">Similar Movie</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="w-full flex items-center justify-center flex-col gap-10" id="app">
+        <section class="w-full flex flex-col items-center justify-center gap-3" id="movie">
+            <div class="w-full">
+                <video src="" id="video" class="relative min-w-full max-w-full aspect-video max-h-[600px] object-cover" poster="" controls>
+                </video>
+            </div>
+            <div class="w-full flex items-center justify-center flex-col gap-6">
+                
+                <div class="w-full h-auto flex items-center flex-col md:flex-row gap-2 px-4 md:px-10 lg:px-28 text-sm">
+                    <div>
+                        <img src="" alt="" class="hidden sm:block max-h-80 w-72 bg-cover rounded-sm" id="img">
+                    </div>
+                    <div class="h-full w-full flex flex-col mb-8">
+                        <div class="self-center md:self-auto">
+                            <span id="title" class="text-aqua text-xl font-semibold w-full"></span>
+                        </div>
+                        <div class="self-center md:self-auto flex items-center text-aqua py-4">
+                            <div id="genres" class="border-r-2 border-blue-900 pr-2">
+                                <span>Genres:</span>
+                                
+                            </div>
+                            <div class="border-r-2 border-blue-900 px-2">
+                                <span id="year"></span>
+                            </div>
+                            <div class="border-r-2 border-blue-900 px-2">
+                                <span id="country" class="text-yellow-400"></span>
+                            </div>
+                            <div class="px-2">
+                                <span id="runtime"></span>
+                            </div>
+                        </div>
+                        <div class="w-full md:w-auto flex flex-col gap-5 border-t border-blue-900 py-4 text-aqua">
+                            <div>
+                                <span class="font-bold"><span id="rate"></span>/10&nbsp; <img src="../../src/img/imdb-icon-filled-256.png" alt="" class="inline max-h-8 rounded-sm"></span>
+                            </div>
+                            <ul class="flex items-center gap-1" id="actors">
+                                <span>Actors:</span>
+    
+                            </ul>                        
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-3 border-t border-blue-900 py-4 text-3xl text-black font-semibold">
+                                <button class="cursor-pointer py-2 px-3 bg-blue-900 rounded-sm"><i class="ri-thumb-up-fill"></i></button>
+                                <button class="cursor-pointer py-2 px-3 bg-blue-900 rounded-sm"><i class="ri-thumb-down-fill"></i></button>
+                            </div>
+                        </div>
+                        
+                    </div>  
+                </div>
+                <div class="flex items-center flex-col md:flex-row gap-5 px-4 md:px-10 lg:px-28 text-aqua mb-10">
+                    <div class="w-full" id="trailer-movie">
+                        <iframe id="trailer" class="relative min-w-full max-w-full aspect-video max-h-[600px] object-cover" poster="" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <div class="md:max-w-[50%]">
+                        <span class="font-bold text-aqua text-xl">Movie Storie</span>
+                        <p id="description"></p>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </section>
+    
+        <section class="splide splide-5 w-full px-4 md:px-10 lg:px-28 mb-10 space-y-2" aria-label="Splide Basic HTML Example" id="similar-movie">
+            <span class="text-2xl text-aqua font-bold cursor-pointer" id="">Similar Movies</span>
+            <div class="splide__track">
+              <ul class="splide__list space-x-2" id="movies-list">
+                  
+              </ul>
+            </div>
+          </section>
+    
+          <footer class="w-full"> 
+            <div class="flex items-center flex-col w-full">
+                <div class="flex gap-10 flex-col md:flex-row w-full p-8 bg-[#1e2444]">
+                    <div class="max-w-[450px] text-aqua w-full">
+                        <a href="#" class="text-4xl text-pink font-bold mb-4">FILIMO</a>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nesciunt accusantium nihil maiores. Nisi, dolor?</p>
+                    </div>
+                    <ul class="list-none text-aqua w-full">
+                        <span class="font-bold mb-6">Pages:</span>
+                        <li><a href="./index.html" class="hover:text-pink duration-100">Home</a></li>
+                        <li><a href="#trailer-movie" class="hover:text-pink duration-100">Trailer</a></li>
+                        <li><a href="#similar-movie" class="hover:text-pink duration-100">Similar Movie</a></li>
+                    </ul>
+                    <ul class="list-none flex gap-2 text-aqua text-3xl w-full">
+                        <li><a href="#"><i class="ri-instagram-line hover:text-pink duration-100"></i></a></li>
+                        <li><a href="#"><i class="ri-facebook-circle-line hover:text-pink duration-100"></i></a></li>
+                        <li><a href="#"><i class="ri-github-line hover:text-pink duration-100"></i></a></li>
+                        <li><a href="#"><i class="ri-telegram-line hover:text-pink duration-100"></i></a></li>
+                        <li><a href="#"><i class="ri-whatsapp-line hover:text-pink duration-100"></i></a></li>
+                    </ul>
+                </div>
+                <div class="w-full flex items-center justify-center p-6 text-[10px] sm:text-2xl text-aqua bg-[#2e2444]">
+                    <p>All rights of this site are reserved for <span class="text-pink font-semibold">FILIMO</span></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+
+
+
+    <template id="movie-list-item">
+        <li class="splide__slide item container flex flex-col gap-1 w-auto h-auto overflow-hidden mt-2">
+            <div class="group flex flex-col rounded-sm overflow-hidden border-2 border-pink">
+                <div class="max-h-80 relative">
+                    <div class="absolute top-2 -left-24 group-hover:left-0 z-10 duration-300 w-full flex items-center justify-between px-2">
+                        <span class="bg-black text-aqua text-sm py-1 px-2 rounded-md">HD</span>
+                    </div>
+                    <img src="" alt="" class="media-thumb bg-cover h-auto group-hover:scale-110 duration-300">
+                    <div class="absolute bottom-2 -right-24 group-hover:right-0 duration-300 px-2">
+                        <span class="rate bg-yellow-400 text-black py-1 px-4 rounded-md"></span>
+                    </div>
+                    
+                    <button class="absolute -top-24 group-hover:top-[38%] left-[33%] duration-300"><i class="ri-play-circle-line text-7xl text-aqua hover:text-pink duration-150"></i></button>
+
+                </div>
+                
+            </div>
+            <div>
+                <h5 class="media-box-title text-white text-center"></h5>
+            </div>
+        </li>
+    </template>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="/src/js/lib/splide.min.js"></script>
+    <script src="/src/js/lib/splide-extension-auto-scroll.min.js"></script>
+    <script type="module" src="/src/js/Pages/MoviePage/app.js"></script>
+</body>
+</html>

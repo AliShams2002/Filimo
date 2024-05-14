@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"rel="stylesheet"/>
+    <link rel="stylesheet" href="/src/css/lib/splide.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+
+
+    <style>
+        .splide__slide.is-active {
+            opacity: 1;
+        }
+    </style>
+
+    <title>Filimo</title>
+</head>
+<body class="relative bg-black flex items-center justify-center box-border">
+
+    <header class="absolute top-0 w-full p-4 flex flex-row-reverse items-center justify-between gap-12 bg-gradient-to-b from-[#000] z-50">
+        <a href="./index.html" class="text-3xl text-pink font-bold">FILIMO</a>
+        <div>
+            <div>
+                <a href="#" id="menu-btn"><i class="ri-menu-line text-pink text-2xl lg:hidden"></i></a>
+            </div>
+            <ul class="hidden lg:flex items-center gap-6 text-aqua text-xl">
+                <li><a href="#archive" class="hover:text-pink duration-100">Archive</a></li>
+                <li><a href="#trending" class="hover:text-pink duration-100" id="archive-btn">Trending</a></li>
+                <li><a href="#for-you" class="hover:text-pink duration-100" id="archive-btn">For You</a></li>
+                <li><a href="#popular" class="hover:text-pink duration-100">Popular</a></li>
+                <li><a href="#top-rated" class="hover:text-pink duration-100">Top Rated</a></li>
+                <li><a href="#now-playing" class="hover:text-pink duration-100">Now Playing</a></li>
+            </ul>
+        </div>
+        
+    </header>
+
+    <div class="w-full flex items-center justify-center flex-col gap-8" id="app">
+        <section class="w-full">
+            <div class="w-full max-h-screen">
+                
+                <section class="splide splide-9-main" aria-labelledby="carousel-heading" dir="ltr">
+                    <div class="splide__track">
+                        <ul class="splide__list w-full max-h-screen relative">
+                            <li class="splide__slide" id="img-cover">
+                                <a class="d-block" href="javascript:void(0)">
+                                    <span class="text-white text-sm sm:text-xl md:text-2xl xl:text-4xl font-bold absolute bottom-7 md:bottom-14 left-5 mb-7 md:mb-14 drop-shadow-lg" id="poster-title"></span>
+                                    <span class="text-yellow-400 text-sm sm:text-2xl md:text-4xl font-bold absolute bottom-7 md:bottom-14 left-5 drop-shadow-lg" id="poster-rate"></span>
+                                    <img class="width-full" src="" id="img">
+                                </a>
+                            </li>
+
+                            <li class="splide__slide" id="img-cover">
+                                <a class="d-block" href="javascript:void(0)">
+                                    <span class="text-white text-sm sm:text-xl md:text-2xl xl:text-4xl font-bold absolute bottom-7 md:bottom-14 left-5 mb-7 md:mb-14 drop-shadow-lg" id="poster-title"></span>
+                                    <span class="text-yellow-500 text-sm sm:text-2xl md:text-4xl font-bold absolute bottom-7 md:bottom-14 left-5 drop-shadow-lg" id="poster-rate"></span>
+                                    <img class="width-full" src="" id="img">
+                                </a>
+                            </li>
+
+                            <li class="splide__slide" id="img-cover">
+                                <a class="d-block" href="javascript:void(0)">
+                                    <span class="text-white text-sm sm:text-xl md:text-2xl xl:text-4xl font-bold absolute bottom-7 md:bottom-14 left-5 mb-7 md:mb-14 drop-shadow-lg" id="poster-title"></span>
+                                    <span class="text-yellow-500 text-sm sm:text-2xl md:text-4xl font-bold absolute bottom-7 md:bottom-14 left-5 drop-shadow-lg" id="poster-rate"></span>
+                                    <img class="width-full" src="" id="img">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <section class="splide splide-9-thumbnail hidden sm:block absolute bottom-7 md:bottom-14 right-4" aria-labelledby="carousel-heading" dir="ltr">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                <li class="splide__slide"><a class="d-block" href="javascript:void(0)"><img
+                                            class="" src="" id="sm-img"></a></li>
+                                <li class="splide__slide"><a class="d-block" href="javascript:void(0)"><img
+                                            class="" src="" id="sm-img"></a></li>
+                                <li class="splide__slide"><a class="d-block" href="javascript:void(0)"><img
+                                            class="" src="" id="sm-img"></a></li>
+                            </ul>
+                        </div>
+                    </section>
+                </section>
+
+                <div class="w-full h-screen absolute top-0 z-50 lg:hidden -translate-x-full duration-500" id="menu">
+                    <div class="fixed top-0 left-0 w-full h-full bg-[#00000054] z-50">
+                        <ul class="w-1/2 h-screen flex flex-col items-start gap-2 py-5 pr-3 bg-black fixed top-0 left-0 z-50">
+                            <a href="" id="close" class="text-aqua hover:text-pink ml-auto mb-5">X</a>
+                            <li class="w-full text-aqua hover:bg-pink hover:text-aqua py-2 px-4 rounded-md"><a href="#archive">Archive</a></li>
+                            <li class="w-full text-aqua hover:bg-pink hover:text-aqua py-2 px-4 rounded-md"><a href="#trending" id="archive-btn">Trending</a></li>
+                            <li class="w-full text-aqua hover:bg-pink hover:text-aqua py-2 px-4 rounded-md"><a href="#for-you" id="archive-btn">For You</a></li>
+                            <li class="w-full text-aqua hover:bg-pink hover:text-aqua py-2 px-4 rounded-md"><a href="#popular">Popular</a></li>
+                            <li class="w-full text-aqua hover:bg-pink hover:text-aqua py-2 px-4 rounded-md"><a href="#top-rated">Top Rated</a></li>
+                            <li class="w-full text-aqua hover:bg-pink hover:text-aqua py-2 px-4 rounded-md"><a href="#now-playing">Now Playing</a></li>
+                        </ul>
+                    </div>
+                </div>
+                    
+            </div>
+        </section>
+
+
+        <div class="relative w-full flex items-center justify-center flex-col gap-10" id="archive">
+
+            <section class="w-full flex flex-col items-center justify-center gap-2 px-4" id="from-fillter">
+    
+                <div class="max-w-3xl w-full bg-aqua py-2 px-4 rounded-lg">
+                    <div class="flex items-center gap-2 w-full text-gray-400">
+                        <a href="#"><i class="ri-search-2-line"></i></a>
+                        <input type="search" name="" id="keyword-search" placeholder="Search..." class="w-full py-1 px-2 bg-aqua focus:outline-gray-400 text-black">
+                    </div>
+                </div>
+        
+                <div class="container max-w-3xl grid items-center justify-center content-center grid-cols-2 sm:grid-cols-4 gap-2">
+                    <div class="dropdown w-auto">
+                        <label for="fillter-genre" class="flex flex-col gap-1 text-aqua">
+                            <span>Categories:</span>
+                            <select class="max-w-44 bg-pink rounded-md p-1 focus:outline-none text-aqua overflow-hidden" name="with_genres" id="filter-genres">
+                                <option value="">All Categories</option>
+                            </select>
+                        </label>
+                    </div>
+        
+                    <div class="dropdown w-auto">
+                        <label for="fillter-years" class="flex flex-col gap-1 text-aqua">
+                            <span >Years:</span>
+                            <select class="max-w-44 bg-pink rounded-md p-1 focus:outline-none text-aqua overflow-hidden" id="filter-years" name="year">
+                                <option value="">All Years</option>
+                            </select>
+                        </label>
+                    </div>
+        
+                    <div class="dropdown w-auto">
+                        <label for="filter-sort" class="filter-field text-aqua flex flex-col gap-1">
+                            <span>Sort By:</span>
+                            <select class="max-w-44 bg-pink rounded-md p-1 focus:outline-none text-aqua overflow-hidden" name="sort_by" id="filter-sort" class="btn btn-sm btn-filter dropdown-toggle">
+                                <option value="">Default</option>
+                                <option value="popularity.asc">Popularity ASC</option>
+                                <option value="popularity.desc">Popularity DESC</option>
+                                <option value="primary_release_date.asc">Release Date ASC</option>
+                                <option value="primary_release_date.desc">Release Date DESC</option>
+                                <option value="vote_average.asc">Rating ASC</option>
+                                <option value="vote_average.desc">Rating DESC</option>
+                            </select>
+                        </label>
+                    </div>
+        
+                    <div class="dropdown w-auto">
+                        <label for="filter-ratings" class="text-aqua flex flex-col gap-1" class="filter-field">
+                            <span>Ratings:</span>
+                            <select class="max-w-44 bg-pink rounded-md p-1 focus:outline-none text-aqua overflow-hidden" name="vote_average.gte" id="filter-ratings"
+                                class="btn btn-sm btn-filter dropdown-toggle">
+                                <option value="">All ratings</option>
+                                <option value="5">5+</option>
+                                <option value="6" class="hover:bg-pink">6+</option>
+                                <option value="7">7+</option>
+                                <option value="8">8+</option>
+                                <option value="9">9+</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+                
+            </section>
+        
+            <section>
+                <div>
+                    <ul class="w-full p-5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2" id="list-wraper">
+        
+                    </ul>
+                </div>
+            </section>
+    
+            
+        </div>
+
+        <section class="splide splide-1 w-full p-5 mb-10 space-y-2" aria-label="Splide Basic HTML Example" id="trending">
+            <span class="text-2xl text-aqua font-bold" id="">Trending</span>
+            <div class="splide__track">
+              <ul class="splide__list space-x-2" id="movies-list">
+                  
+              </ul>
+            </div>
+          </section>
+        
+        <section class="w-full relative mb-10" id="for-you">
+            <span class="text-aqua text-5xl font-bold absolute top-3 left-12 z-10">For You</span>
+            <div class="best-movie w-full">
+                <img src="" alt="" class="cover h-[600px] bg-cover w-full blur-sm">
+                <div class="flex items-center justify-between flex-col sm:flex-row w-full h-full gap-4 p-3 md:p-12 absolute top-2">
+                    <div class="flex flex-col gap-2 mt-12 max-w-[500px]">
+                        <div class="flex flex-col gap-2">
+                            <span class="title text-2xl font-bold text-aqua"></span>
+                            <span class="rate text-2xl font-bold text-yellow-500"></span>
+                        </div>
+                        <p class="description text-aqua"></p>
+                    </div>
+                    <div>
+                        <img src="" id="" alt="" class="img max-h-[500px] h-auto rounded-lg bg-cover shadow-2xl cursor-pointer">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="splide splide-2 w-full py-2 px-5 space-y-2" aria-label="Splide Basic HTML Example" id="popular">
+            <span class="text-2xl text-aqua font-bold" value = '' id="">Popular</span>
+            <div class="splide__track">
+              <ul class="splide__list space-x-2" id="movies-list">
+                  
+              </ul>
+            </div>
+          </section>
+
+          <section class="splide splide-3 w-full py-2 px-5 space-y-2" aria-label="Splide Basic HTML Example" id="top-rated">
+            <span class="text-2xl text-aqua font-bold" value = '' id="">Top Rated</span>
+            <div class="splide__track">
+              <ul class="splide__list space-x-2" id="movies-list">
+                  
+              </ul>
+            </div>
+          </section>
+
+          
+
+          <section class="splide splide-4 w-full py-2 px-5 mb-10 space-y-2" aria-label="Splide Basic HTML Example" id="now-playing">
+            <span class="text-2xl text-aqua font-bold">Now Playing</span>
+            <div class="splide__track">
+              <ul class="splide__list space-x-2" id="movies-list">
+                  
+              </ul>
+            </div>
+          </section>
+
+        <footer class="w-full"> 
+            <div class="flex items-center flex-col w-full">
+                <div class="flex gap-10 flex-col md:flex-row w-full p-8 bg-[#1e2444]">
+                    <div class="max-w-[450px] text-aqua w-full">
+                        <a href="#" class="text-4xl text-pink font-bold mb-4">FILIMO</a>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nesciunt accusantium nihil maiores. Nisi, dolor?</p>
+                    </div>
+                    <ul class="list-none text-aqua w-full">
+                        <span class="font-bold mb-6">Sections:</span>
+                        <li><a href="#archive" class="hover:text-pink duration-100">Archive</a></li>
+                        <li><a href="#trending" class="hover:text-pink duration-100" id="archive-btn">Trending</a></li>
+                        <li><a href="#for-you" class="hover:text-pink duration-100" id="archive-btn">For You</a></li>
+                        <li><a href="#popular" class="hover:text-pink duration-100">Popular</a></li>
+                        <li><a href="#top-rated" class="hover:text-pink duration-100">Top Rated</a></li>
+                        <li><a href="#now-playing" class="hover:text-pink duration-100">Now Playing</a></li>
+                    </ul>
+                    <ul class="list-none flex gap-2 text-aqua text-3xl w-full">
+                        <li><a href="#"><i class="ri-instagram-line hover:text-pink duration-100"></i></a></li>
+                        <li><a href="#"><i class="ri-facebook-circle-line hover:text-pink duration-100"></i></a></li>
+                        <li><a href="#"><i class="ri-github-line hover:text-pink duration-100"></i></a></li>
+                        <li><a href="#"><i class="ri-telegram-line hover:text-pink duration-100"></i></a></li>
+                        <li><a href="#"><i class="ri-whatsapp-line hover:text-pink duration-100"></i></a></li>
+                    </ul>
+                </div>
+                <div class="w-full flex items-center justify-center p-6 text-[10px] sm:text-2xl text-aqua bg-[#2e2444]">
+                    <p>All rights of this site are reserved for <span class="text-pink font-semibold">FILIMO</span></p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    
+
+    <template class="movie-item-1">
+        <li class="splide__slide item container flex flex-col gap-1 w-auto h-auto overflow-hidden mt-2">
+            <div class="group flex flex-col rounded-sm overflow-hidden border-2 border-pink">
+                <div class="max-h-80 relative">
+                    <div class="absolute top-2 -left-24 group-hover:left-0 z-10 duration-300 w-full flex items-center justify-between px-2">
+                        <span class="bg-black text-aqua text-sm py-1 px-2 rounded-md">HD</span>
+                    </div>
+                    <img src="" alt="" class="media-thumb bg-cover h-auto group-hover:scale-110 duration-300">
+                    <div class="absolute bottom-2 -right-24 group-hover:right-0 duration-300 px-2">
+                        <span class="rate bg-yellow-400 text-black py-1 px-4 rounded-md"></span>
+                    </div>
+                    
+                    <button class="absolute -top-24 group-hover:top-[38%] left-[33%] duration-300"><i class="ri-play-circle-line text-7xl text-aqua hover:text-pink duration-150"></i></button>
+
+                </div>
+                
+            </div>
+            <div>
+                <h5 class="media-box-title text-white text-center"></h5>
+            </div>
+        </li>
+    </template>
+
+    <template class="movie-item-2">
+        <li class="splide__slide item container flex flex-col gap-1 w-auto h-auto overflow-hidden mt-2 opacity-5">
+            <div class="group flex flex-col rounded-sm overflow-hidden border-2 border-pink">
+                <div class="max-h-80 relative">
+                    <div class="absolute top-2 -left-24 group-hover:left-0 z-10 duration-300 w-full flex items-center justify-between px-2">
+                        <span class="bg-black text-aqua text-sm py-1 px-2 rounded-md">HD</span>
+                    </div>
+                    <img src="" alt="" class="media-thumb bg-cover h-auto group-hover:scale-110 duration-300">
+                    <div class="absolute bottom-2 -right-24 group-hover:right-0 duration-300 px-2">
+                        <span class="rate bg-yellow-400 text-black py-1 px-4 rounded-md"></span>
+                    </div>
+                    
+                    <button class="absolute -top-24 group-hover:top-[38%] left-[33%] duration-300"><i class="ri-play-circle-line text-7xl text-aqua hover:text-pink duration-150"></i></button>
+
+                </div>
+                
+            </div>
+            <div>
+                <h5 class="media-box-title text-white text-center"></h5>
+            </div>
+        </li>
+    </template>
+    
+
+
+    <script src="/src/js/lib/splide.min.js"></script>
+    <script src="/src/js/lib/splide-extension-auto-scroll.min.js"></script>
+    <script src="/public/js/final.js" type="module"></script>
+</body>
+</html>
