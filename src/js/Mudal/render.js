@@ -1,3 +1,4 @@
+import { Sliders } from "./sliders.js"
 import axios from "axios";
 
 export class Movies {
@@ -39,6 +40,8 @@ export class Movies {
 
             this.movieList[0].append(movieElm);
         })
+
+        const slider = new Sliders();
 
         const items = document.querySelectorAll('.item');
 
@@ -83,6 +86,7 @@ export class Movies {
             
         })
 
+        const slider = new Sliders();
         this.popularMovie(movies[0]);
 
         const items = document.querySelectorAll('.item');
@@ -108,6 +112,7 @@ export class Movies {
             
         })
 
+        const slider = new Sliders();
         const items = document.querySelectorAll('.item');
 
         for (let index = 0; index < items.length; index++) {
@@ -132,6 +137,7 @@ export class Movies {
             
         })
 
+        const slider = new Sliders();
         const items = document.querySelectorAll('.item');
 
         for (let index = 0; index < items.length; index++) {

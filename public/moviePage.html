@@ -54,9 +54,11 @@
                             <span id="title" class="text-aqua text-xl font-semibold w-full"></span>
                         </div>
                         <div class="self-center md:self-auto flex items-center text-aqua py-4">
-                            <div id="genres" class="border-r-2 border-blue-900 pr-2">
+                            <div class="flex gap-1">
                                 <span>Genres:</span>
-                                
+                                <div  id="genres" class="border-r-2 border-blue-900 pr-2">
+
+                                </div>                              
                             </div>
                             <div class="border-r-2 border-blue-900 px-2">
                                 <span id="year"></span>
@@ -72,10 +74,13 @@
                             <div>
                                 <span class="font-bold"><span id="rate"></span>/10&nbsp; <i class="ri-star-fill text-yellow-400"></i></span>
                             </div>
-                            <ul class="flex items-center gap-1" id="actors">
+                            <div class="flex gap-1">
                                 <span>Actors:</span>
-    
-                            </ul>                        
+                                <ul class="flex items-center gap-1" id="actors">
+                                    
+        
+                                </ul>    
+                            </div>               
                         </div>
                         <div>
                             <div class="flex items-center gap-3 border-t border-blue-900 py-4 text-3xl text-black font-semibold">
@@ -101,7 +106,7 @@
         </section>
     
         <section class="splide splide-5 w-full px-4 md:px-10 lg:px-28 mb-10 space-y-2" aria-label="Splide Basic HTML Example" id="similar-movie">
-            <span class="text-2xl text-aqua font-bold cursor-pointer" id="">Similar Movies</span>
+            <span class="text-2xl text-aqua font-bold" id="">Similar Movies</span>
             <div class="splide__track">
               <ul class="splide__list space-x-2" id="movies-list">
                   

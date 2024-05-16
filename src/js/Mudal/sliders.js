@@ -2,11 +2,7 @@
 export class movieSplide{
   constructor() {
     this.interval;
-    this.autoPlay();
-  }
-
-  autoPlay() {
-    this.interval = setTimeout(() => this.slide(), 4000);
+    this.slide();
   }
 
   slide() {
@@ -46,11 +42,7 @@ export class Sliders{
   constructor() {
     this.interval;
 
-    this.autoPlay();
-  }
-
-  autoPlay() {
-    this.interval = setTimeout(() => this.sliders(), 2000);
+    this.sliders();
   }
 
   sliders() { 
@@ -124,3 +116,23 @@ export class Sliders{
     }
 
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+
+  // 1 Slide Per Move
+  var splide1 = new Splide('.splide-1', {
+      type: 'loop',
+      perPage: 3,
+      perMove: 1,
+  });
+  splide1.mount();
+
+  // Focus Center
+  var splide2 = new Splide('.splide-2', {
+      type: 'loop',
+      perPage: 3,
+      focus: 'center',
+  });
+  splide2.mount();
+
+});

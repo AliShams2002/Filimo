@@ -1,3 +1,4 @@
+import { movieSplide } from "../Mudal/sliders.js"
 import axios from "axios";
 
 
@@ -16,12 +17,10 @@ export class Render{
     async fetch(id) {
         
         const {data: responseRender} = await axios.get(`https://api.themoviedb.org/3/movie/${id}?language=en-US`);
-        const {data: responseSimilar} = await axios.get(`https://api.themoviedb.org/3/movie/${id}/similar?language=en-US&page=1`);
         const {data: responseActors} = await axios.get(`https://api.themoviedb.org/3/movie/${id}/credits?language=en-US`);
         const {data: responseVideo} = await axios.get(`https://api.themoviedb.org/3/movie/${id}/videos?language=en-US`);
 
         this.render(responseRender);
-        this.similarRender(responseSimilar.results);
         this.renderActors(responseActors.cast);
         this.rendervideo(responseVideo.results);
         
@@ -38,8 +37,9 @@ export class Render{
         this.movieElm.querySelector('#rate').innerHTML = movie.vote_average.toFixed(1);
         this.movieElm.querySelector('#description').innerHTML = movie.overview;
 
-
+        this.genresList.innerHTML = '';
         movie.genres.forEach((item) => {
+            
             const spn = document.createElement('span');
 
             spn.id = item.id;
@@ -47,6 +47,13 @@ export class Render{
 
             this.genresList.append(spn);
         })
+
+        this.fetchSimilar(movie.id);
+    }
+
+    async fetchSimilar(id) {
+        const {data: responseSimilar} = await axios.get(`https://api.themoviedb.org/3/movie/${id}/similar?language=en-US&page=1`);
+        this.similarRender(responseSimilar.results);
     }
 
     similarRender(movies) {
@@ -62,17 +69,19 @@ export class Render{
             
         })
 
+        const slider = new movieSplide();
         const items = document.querySelectorAll('.item');
 
         for (let index = 0; index < items.length; index++) {
             items[index].addEventListener('click', () => {
                 localStorage.setItem('key', items[index].value);
-                window.location.href = './moviePage.html';
+                this._getLocalStorage();
             })
         }
     }
 
     renderActors(actors) {
+        this.actorsList.innerHTML = '';
         for (let index = 0; index < 5; index++) {
             const actor = document.createElement('li');
 
@@ -84,8 +93,8 @@ export class Render{
 
     rendervideo(key) {
         key.forEach((item) => {
-            if(item.type === "Trailer" && item.size === 1080) {
-                this.trailer.src = `https://www.youtube.com/embed/${item.key}`
+            if(item.type === "Trailer" && item.size === 1080 || item.size === 720) {
+                this.trailer.src = `https://www.youtube.com/embed/${item.key}`;
             }
         })
         
